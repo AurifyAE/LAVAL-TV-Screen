@@ -251,7 +251,7 @@ function TvScreen() {
                           style={{ color: "#FFFFFF" }}
                         >
                           04 2955205
-                        </a>
+                        </a> 
                         <span className="mx-1" style={{ color: "#A18038" }}>/</span>
                         <a
                           href="tel:0505437352"
@@ -259,6 +259,14 @@ function TvScreen() {
                           style={{ color: "#FFFFFF" }}
                         >
                           0505437352
+                        </a>
+                        <span className="mx-1" style={{ color: "#A18038" }}>/</span>
+                        <a
+                          href="tel:0505437352"
+                          className="hover:underline"
+                          style={{ color: "#FFFFFF" }}
+                        >
+                          056 445 2445
                         </a>
                       </div>
                     </div>
