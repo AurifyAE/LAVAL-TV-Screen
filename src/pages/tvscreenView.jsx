@@ -7,7 +7,7 @@ import CommodityTable from "../components/CommodityTable";
 import NewsTicker from "../components/News";
 import TradingViewWidget from "../components/TradingViewWidget";
 import Carousel from "../components/Carousel";
-import lavalLogo from "../assets/Laval_Logo.png";
+import lavalLogo from "../assets/lavalLogo.png";
 import {
   fetchSpotRates,
   fetchServerURL,
@@ -199,9 +199,9 @@ function TvScreen() {
               className="w-full rounded-xl overflow-hidden shadow-lg"
               style={{ borderTop: "3px solid #A18038", backgroundColor: "#2C2B2A" }}
             >
-              <div className="p-4">
+              <div className="p-2">
                 {/* Header */}
-                <div className="text-center mb-4">
+                <div className="text-center mb-2">
                   <h2 
                     className="font-bold" 
                     style={{ 
@@ -215,10 +215,10 @@ function TvScreen() {
                 </div>
 
                 {/* Contact Items - Horizontal Layout */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {/* Phone */}
                   <div
-                    className="flex gap-3 p-3 rounded-lg flex-1 min-w-[200px]"
+                    className="flex gap-3 p-2 rounded-lg w-full"
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
@@ -274,7 +274,7 @@ function TvScreen() {
 
                   {/* Email */}
                   <div
-                    className="flex gap-3 p-3 rounded-lg flex-1 min-w-[200px]"
+                    className="flex gap-3 p-2 rounded-lg w-full"
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
@@ -314,7 +314,7 @@ function TvScreen() {
 
                   {/* Address */}
                   <div
-                    className="flex gap-3 p-3 rounded-lg w-full"
+                    className="flex gap-3 p-2 rounded-lg w-full"
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
@@ -369,9 +369,8 @@ function TvScreen() {
             {/* Logo */}
             <Box
               className="flex flex-col items-center justify-between"
-              sx={{ marginLeft: "50px" }}
             >
-              <img src={lavalLogo} alt="" className="w-72 h-48" />
+              <img src={lavalLogo} alt="" className="w-96 h-52" />
             </Box>
 
             {/* Date Day */}
@@ -391,14 +390,14 @@ function TvScreen() {
               <Box className="flex flex-row">
                 <Typography
                   className="font-bold mx-2"
-                  sx={{ fontSize: "2vw", color: "#CFA545", fontWeight: "600" }}
+                  sx={{ fontSize: "1.4vw", color: "#CFA545", fontWeight: "600" }}
                 >
                   {date}
                 </Typography>
                 <Typography
                   className="font-bold mx-2"
                   sx={{
-                    fontSize: "2.2vw",
+                    fontSize: "1.4vw",
                     marginLeft: "13px",
                     color: "#CFA545",
                     fontWeight: "600",
@@ -409,7 +408,7 @@ function TvScreen() {
                 <Typography
                   className="font-bold mx-2"
                   sx={{
-                    fontSize: "2.2vw",
+                    fontSize: "1.4vw",
                     marginLeft: "13px",
                     color: "#CFA545",
                     fontWeight: "600",
@@ -420,7 +419,7 @@ function TvScreen() {
               </Box>
               <Typography
                 className="font-semibold text-xl"
-                sx={{ fontSize: "2.5vw", color: "#CFA545", fontWeight: "600" }}
+                sx={{ fontSize: "2vw", color: "#CFA545", fontWeight: "600", letterSpacing: 6 }}
               >
                 {day.toUpperCase()}
               </Typography>

@@ -99,27 +99,27 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2vw",
+                fontSize: "1.5vw",
                 textAlign: "center",
               }}
             >
               UNIT
             </TableCell>
-            <TableCell
+            {/* <TableCell
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2vw",
+                fontSize: "1.5vw",
                 textAlign: "center",
               }}
             >
               BID (AED)
-            </TableCell>
+            </TableCell> */}
             <TableCell
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2vw",
+                fontSize: "1.5vw",
                 textAlign: "center",
               }}
             >
@@ -209,7 +209,7 @@ const CommodityTable = ({ commodities }) => {
                       textAlign: "left",
                       paddingLeft: "0px",
                       fontWeight: "600",
-                      padding: "20px 4px",
+                      padding: "10px 8px",
                     }}
                   >
                     {purity === 916 ? '22K ' : purity === 875 ? '21K' : purity === 750 ? '18k' : purity}  
@@ -225,24 +225,24 @@ const CommodityTable = ({ commodities }) => {
                   >
                     {unit} {weight}
                   </TableCell>
-                  <TableCell
+                  {/* <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2vw",
+                      fontSize: "1.5vw",
                       fontWeight: "600",
                       textAlign: "center",
-                      padding: "8px",
+                      padding: "6px",
                     }}
                   >
                     {formatValue(buyPrice, weight)}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell
                     sx={{
                       color: "white",
                       fontSize: "2vw",
                       fontWeight: "600",
                       textAlign: "center",
-                      padding: "0px 10px",
+                      padding: "0px 8px",
                     }}
                   >
                     {formatValue(sellPrice, weight)}

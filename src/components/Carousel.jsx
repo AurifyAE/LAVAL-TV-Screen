@@ -38,7 +38,7 @@ const Carousel = () => {
         <img
           src={images[currentIndex]}
           alt={`Carousel image ${currentIndex + 1}`}
-          className="w-full h-44 rounded-xl object-fit"
+          className="w-full h-32 rounded-xl object-fit"
         />
       </Box>
     </Box>

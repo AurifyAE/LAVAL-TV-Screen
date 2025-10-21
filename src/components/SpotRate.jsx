@@ -77,7 +77,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.4vw",
+                  fontSize: "1.2vw",
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -106,7 +106,7 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2.5vw",
+                fontSize: "2vw",
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
@@ -146,7 +146,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.4vw",
+                  fontSize: "1.2vw",
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -175,7 +175,7 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2.5vw",
+                fontSize: "2vw",
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
