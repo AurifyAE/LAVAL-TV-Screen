@@ -53,7 +53,7 @@ const SpotRate = () => {
         >
           <Typography
             sx={{
-              fontSize: metal === 'gold' ? "2vw" : "1.5vw",
+              fontSize: metal === 'gold' ? "2.5vw" : "2vw",
               fontWeight: "600",
               color: "white",
               textTransform: "uppercase",
@@ -64,7 +64,7 @@ const SpotRate = () => {
           <Typography
             sx={{
               marginTop: "10px",
-              fontSize: "1.5vw",
+              fontSize: metal === 'gold' ? "1.8vw" : "1.5vw",
               color: "white",
               fontWeight: "600",
             }}
@@ -77,7 +77,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.2vw",
+                  fontSize: "1.5vw",
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -89,8 +89,8 @@ const SpotRate = () => {
                 sx={{
                   marginLeft: "0.3vw",
                   backgroundColor: "#A18038",
-                  width: "24px",
-                  height: "24px",
+                  width: "26px",
+                  height: "26px",
                   borderRadius: "50%",
                   fontSize: "1.1vw",
                   fontWeight: "600",
@@ -106,14 +106,14 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2vw",
+                fontSize: "2.5vw",
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
                 borderRadius: "5px",
                 color: getColor(data.bidChanged),
                 backgroundColor: getBackgroundColor(data.bidChanged),
-                width: "11vw",
+                width: "12vw",
               }}
             >
               {data.bid}
@@ -125,13 +125,13 @@ const SpotRate = () => {
                 justifyContent: "center",
                 backgroundColor: "#3b3b3b",
                 borderRadius: "3px",
-                width: "11vw",
+                width: "12vw",
               }}
             >
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: "1vw",
+                  fontSize: "1.5vw",
                   color: "white",
                   fontWeight: "bold",
                   marginLeft: "0.5vw",
@@ -146,7 +146,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.2vw",
+                  fontSize: "1.5vw",
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -158,8 +158,8 @@ const SpotRate = () => {
                 sx={{
                   marginLeft: "0.3vw",
                   backgroundColor: "#A18038",
-                  width: "24px",
-                  height: "24px",
+                  width: "26px",
+                  height: "26px",
                   borderRadius: "50%",
                   fontSize: "1.1vw",
                   fontWeight: "600",
@@ -175,14 +175,14 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2vw",
+                fontSize: "2.5vw",
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
                 borderRadius: "5px",
                 color: getColor(data.bidChanged),
                 backgroundColor: getBackgroundColor(data.bidChanged),
-                width: "11vw",
+                width: "12vw",
               }}
             >
               {data.ask}
@@ -194,13 +194,13 @@ const SpotRate = () => {
                 justifyContent: "center",
                 backgroundColor: "#3b3b3b",
                 borderRadius: "3px",
-                width: "11vw",
+                width: "12vw",
               }}
             >
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: "1vw",
+                  fontSize: "1.5vw",
                   color: "white",
                   fontWeight: "bold",
                   marginLeft: "0.5vw",

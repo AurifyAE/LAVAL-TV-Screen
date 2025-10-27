@@ -153,13 +153,28 @@ function TvScreen() {
   const getFormattedDateParts = (date) => {
     const day = date.toLocaleDateString("en-GB", { weekday: "long" });
     const dayOfMonth = date.toLocaleDateString("en-GB", { day: "2-digit" });
-    const month = date
-      .toLocaleDateString("en-GB", { month: "long" })
-      .toUpperCase();
-    const year = date.toLocaleDateString("en-GB", { year: "numeric" });
+
+    // Safe month handling
+    let month;
+    try {
+      month = date.toLocaleDateString("en-GB", { month: "long" });
+    } catch {
+      // Fallback for browsers that don't support month name formatting
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      month = monthNames[date.getMonth()];
+    }
+
+    // Capitalize month safely
+    month = month ? month.toUpperCase() : "";
+
+    const year = date.getFullYear().toString();
 
     return { day, date: dayOfMonth, month, year };
   };
+
 
   const getFormattedTimeWithoutSeconds = (date) => {
     return date.toLocaleTimeString([], {
@@ -195,17 +210,17 @@ function TvScreen() {
 
           {/* Contact Section */}
           <div className="mt-6 w-full">
-            <div 
+            <div
               className="w-full rounded-xl overflow-hidden shadow-lg"
               style={{ borderTop: "3px solid #A18038", backgroundColor: "#2C2B2A" }}
             >
               <div className="p-2">
                 {/* Header */}
                 <div className="text-center mb-2">
-                  <h2 
-                    className="font-bold" 
-                    style={{ 
-                      color: "#A18038", 
+                  <h2
+                    className="font-bold"
+                    style={{
+                      color: "#A18038",
                       fontFamily: "Roboto, sans-serif",
                       fontSize: "1.5vw"
                     }}
@@ -222,27 +237,27 @@ function TvScreen() {
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
-                      className="rounded-full p-2 flex items-center justify-center w-9 h-9 flex-shrink-0"
+                      className="rounded-full p-2 flex items-center justify-center w-11 h-11 flex-shrink-0"
                       style={{ backgroundColor: "#A18038" }}
                     >
-                      <Phone sx={{ color: "#2C2B2A", fontSize: "1.1rem" }} />
+                      <Phone sx={{ color: "#2C2B2A", fontSize: "1.3rem" }} />
                     </div>
                     <div className="flex-1">
                       <div
                         className="font-semibold uppercase tracking-wider mb-1"
-                        style={{ 
-                          color: "#FFFFFF", 
+                        style={{
+                          color: "#FFFFFF",
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.8vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         Phone
                       </div>
-                      <div 
+                      <div
                         className="leading-relaxed"
-                        style={{ 
+                        style={{
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.9vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         <a
@@ -251,7 +266,7 @@ function TvScreen() {
                           style={{ color: "#FFFFFF" }}
                         >
                           04 2955205
-                        </a> 
+                        </a>
                         <span className="mx-1" style={{ color: "#A18038" }}>/</span>
                         <a
                           href="tel:0505437352"
@@ -278,27 +293,27 @@ function TvScreen() {
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
-                      className="rounded-full p-2 flex items-center justify-center w-9 h-9 flex-shrink-0"
+                      className="rounded-full p-2 flex items-center justify-center w-11 h-11 flex-shrink-0"
                       style={{ backgroundColor: "#A18038" }}
                     >
-                      <Email sx={{ color: "#2C2B2A", fontSize: "1.1rem" }} />
+                      <Email sx={{ color: "#2C2B2A", fontSize: "1.3rem" }} />
                     </div>
                     <div className="flex-1">
                       <div
                         className="font-semibold uppercase tracking-wider mb-1"
-                        style={{ 
-                          color: "#FFFFFF", 
+                        style={{
+                          color: "#FFFFFF",
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.8vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         Email
                       </div>
-                      <div 
+                      <div
                         className="break-all"
-                        style={{ 
+                        style={{
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.9vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         <a
@@ -318,28 +333,28 @@ function TvScreen() {
                     style={{ backgroundColor: "rgba(161, 128, 56, 0.1)" }}
                   >
                     <div
-                      className="rounded-full p-2 flex items-center justify-center w-9 h-9 flex-shrink-0"
+                      className="rounded-full p-2 flex items-center justify-center w-11 h-11 flex-shrink-0"
                       style={{ backgroundColor: "#A18038" }}
                     >
-                      <LocationOn sx={{ color: "#2C2B2A", fontSize: "1.1rem" }} />
+                      <LocationOn sx={{ color: "#2C2B2A", fontSize: "1.3rem" }} />
                     </div>
                     <div className="flex-1">
                       <div
                         className="font-semibold uppercase tracking-wider mb-1"
-                        style={{ 
-                          color: "#FFFFFF", 
+                        style={{
+                          color: "#FFFFFF",
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.8vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         Office
                       </div>
-                      <div 
+                      <div
                         className="leading-relaxed"
-                        style={{ 
-                          color: "#FFFFFF", 
+                        style={{
+                          color: "#FFFFFF",
                           fontFamily: "Roboto, sans-serif",
-                          fontSize: "0.9vw"
+                          fontSize: "1.1vw"
                         }}
                       >
                         Hind Plaza 5A, Office 301 & 302, Deira Gold Souq, Dubai, UAE
@@ -370,7 +385,7 @@ function TvScreen() {
             <Box
               className="flex flex-col items-center justify-between"
             >
-              <img src={lavalLogo} alt="" className="w-96 h-52" />
+              <img src={lavalLogo} alt="" style={{ width: "450px", height: "260px" }} />
             </Box>
 
             {/* Date Day */}
@@ -380,7 +395,7 @@ function TvScreen() {
                 <Typography
                   sx={{
                     color: "#CFA545",
-                    fontSize: "4.5vw",
+                    fontSize: "5vw",
                     fontFamily: "Digital-7",
                   }}
                 >
@@ -390,14 +405,14 @@ function TvScreen() {
               <Box className="flex flex-row">
                 <Typography
                   className="font-bold mx-2"
-                  sx={{ fontSize: "1.4vw", color: "#CFA545", fontWeight: "600" }}
+                  sx={{ fontSize: "1.8vw", color: "#CFA545", fontWeight: "600" }}
                 >
                   {date}
                 </Typography>
                 <Typography
                   className="font-bold mx-2"
                   sx={{
-                    fontSize: "1.4vw",
+                    fontSize: "1.8vw",
                     marginLeft: "13px",
                     color: "#CFA545",
                     fontWeight: "600",
@@ -408,7 +423,7 @@ function TvScreen() {
                 <Typography
                   className="font-bold mx-2"
                   sx={{
-                    fontSize: "1.4vw",
+                    fontSize: "1.8vw",
                     marginLeft: "13px",
                     color: "#CFA545",
                     fontWeight: "600",
@@ -419,7 +434,7 @@ function TvScreen() {
               </Box>
               <Typography
                 className="font-semibold text-xl"
-                sx={{ fontSize: "2vw", color: "#CFA545", fontWeight: "600", letterSpacing: 6 }}
+                sx={{ fontSize: "2.5vw", color: "#CFA545", fontWeight: "600", letterSpacing: 6 }}
               >
                 {day.toUpperCase()}
               </Typography>

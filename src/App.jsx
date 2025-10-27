@@ -6,30 +6,65 @@ import TvScreen from "./pages/tvscreenView";
 import ErrorPage from "./components/ErrorPage";
 
 function App() {
-  const [isTvScreen, setIsTvScreen] = useState(window.innerWidth >= 600);
+  const [isTvScreen, setIsTvScreen] = useState(window.innerWidth >= 100);
 
   useEffect(() => {
-    // Function to check the window size and update state
+    // Listen to resize changes
     const handleResize = () => {
-      const isLargeScreen = window.innerWidth >= 600;
-      setIsTvScreen(isLargeScreen);
+      setIsTvScreen(window.innerWidth >= 100);
+      scaleApp(); // Recalculate scale when screen changes
     };
 
-    // Initial check
-    handleResize();
+    // Scaling function
+    const scaleApp = () => {
+      const app = document.getElementById("tv-app-container");
+      if (!app) return;
 
-    // Add event listener for window resize
+      // Your base design dimensions (1080p layout)
+      const baseWidth = 1920;
+      const baseHeight = 1080;
+
+      // Calculate scale based on window size
+      const scaleX = window.innerWidth / baseWidth;
+      const scaleY = window.innerHeight / baseHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      // Apply scale transform
+      app.style.transform = `scale(${scale})`;
+      app.style.transformOrigin = "top left";
+
+      // Optional: keep centered
+      const offsetX = (window.innerWidth - baseWidth * scale) / 2;
+      const offsetY = (window.innerHeight - baseHeight * scale) / 2;
+      app.style.position = "absolute";
+      app.style.left = `${offsetX}px`;
+      app.style.top = `${offsetY}px`;
+    };
+
+    // Initialize once
+    scaleApp();
+
     window.addEventListener("resize", handleResize);
+    window.addEventListener("load", scaleApp);
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", scaleApp);
     };
   }, []);
 
   return (
     <SpotRateProvider>
-      {!isTvScreen ? <ErrorPage /> : <TvScreen />}
+      <div
+        id="tv-app-container"
+        style={{
+          width: "1920px",
+          height: "1080px",
+          overflow: "hidden",
+        }}
+      >
+        {!isTvScreen ? <ErrorPage /> : <TvScreen />}
+      </div>
     </SpotRateProvider>
   );
 }

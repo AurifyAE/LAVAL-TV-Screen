@@ -10,8 +10,8 @@ const NewsTicker = ({ newsItems }) => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        height: "40px",
-        marginTop: "15px",
+        height: "50px",
+        marginTop: "25px",
         borderRadius: "10px",
       }}
     >
@@ -26,12 +26,12 @@ const NewsTicker = ({ newsItems }) => {
           borderBottomLeftRadius: "8px",
         }}
       >
-        <Typography sx={{ fontSize: "1.3vw", fontWeight: "bold", padding: '0px' }}>
+        <Typography sx={{ fontSize: "1.6vw", fontWeight: "bold", padding: '0px' }}>
           LAVAL
         </Typography>
         <Typography
           sx={{
-            fontSize: "1vw",
+            fontSize: "1.2vw",
             fontWeight: "bold",
             padding: "0px",
             marginTop: "-10px",
@@ -50,7 +50,7 @@ const NewsTicker = ({ newsItems }) => {
           backgroundColor: "#2C2B2A",
           borderTopRightRadius: "8px",
           borderBottomRightRadius: "8px",
-          height: "40px",
+          height: "50px",
         }}
       >
         <Box
@@ -59,7 +59,7 @@ const NewsTicker = ({ newsItems }) => {
             display: "inline-block",
             animation: "scroll 60s linear infinite",
             color: "black",
-            fontSize: "1.8vw",
+            fontSize: "2.5vw",
             textAlign: "center",
           }}
         >
@@ -71,7 +71,7 @@ const NewsTicker = ({ newsItems }) => {
                 marginRight: "4vw",
                 display: "inline-block",
                 color: "white",
-                fontSize: "1.8vw",
+                fontSize: "2.5vw",
               }}
             >
               {item.description}

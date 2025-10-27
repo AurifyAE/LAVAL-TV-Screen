@@ -63,7 +63,7 @@ const CommodityTable = ({ commodities }) => {
     <TableContainer
       sx={{
         backgroundColor: "",
-        marginTop: "15px",
+        marginTop: "25px",
       }}
     >
       <Table>
@@ -88,7 +88,7 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "1.5vw",
+                fontSize: "2.5vw",
                 textAlign: "center",
               }}
               colSpan={2}
@@ -99,7 +99,7 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "1.5vw",
+                fontSize: "2vw",
                 textAlign: "center",
               }}
             >
@@ -119,7 +119,7 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "1.5vw",
+                fontSize: "2.5vw",
                 textAlign: "center",
               }}
             >
@@ -194,7 +194,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2vw",
+                      fontSize: "2.5vw",
                       fontWeight: "bold",
                       textAlign: "right",
                       padding: "8px",
@@ -205,7 +205,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "1.5vw",
+                      fontSize: "2vw",
                       textAlign: "left",
                       paddingLeft: "0px",
                       fontWeight: "600",
@@ -217,7 +217,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2vw",
+                      fontSize: "2.5vw",
                       fontWeight: "600",
                       textAlign: "center",
                       padding: "8px",
@@ -239,7 +239,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2vw",
+                      fontSize: "2.5vw",
                       fontWeight: "600",
                       textAlign: "center",
                       padding: "0px 8px",
@@ -248,7 +248,7 @@ const CommodityTable = ({ commodities }) => {
                     {formatValue(sellPrice, weight)}
                   </TableCell>
                 </TableRow>
-                <Box height={13}></Box>
+                <Box height={15}></Box>
               </React.Fragment>
             );
           })}
