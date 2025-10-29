@@ -443,11 +443,11 @@ function TvScreen() {
 
           {/* Commodity Table */}
           <CommodityTable commodities={commodities} />
+
+          {/* News Component */}
+          <NewsTicker newsItems={news} />
         </Grid>
       </Grid>
-
-      {/* News Component */}
-      <NewsTicker newsItems={news} />
 
       {/* Conditional rendering of the modal */}
       {showLimitModal && <LimitExceededModal />}
