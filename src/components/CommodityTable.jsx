@@ -88,8 +88,9 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2.5vw",
+                fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
                 textAlign: "center",
+                padding: { xs: "6px 8px", sm: "8px", md: "16px" },
               }}
               colSpan={2}
             >
@@ -99,8 +100,9 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2vw",
+                fontSize: { xs: "4vw", sm: "3vw", md: "2vw" },
                 textAlign: "center",
+                padding: { xs: "6px 8px", sm: "8px", md: "16px" },
               }}
             >
               UNIT
@@ -119,8 +121,9 @@ const CommodityTable = ({ commodities }) => {
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: "2.5vw",
+                fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
                 textAlign: "center",
+                padding: { xs: "6px 8px", sm: "8px", md: "16px" },
               }}
             >
               ASK (AED)
@@ -194,7 +197,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2.5vw",
+                      fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
                       fontWeight: "bold",
                       textAlign: "right",
                       padding: "8px",
@@ -205,19 +208,19 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2vw",
+                      fontSize: { xs: "4vw", sm: "3vw", md: "2vw" },
                       textAlign: "left",
                       paddingLeft: "0px",
                       fontWeight: "600",
                       padding: "10px 8px",
                     }}
                   >
-                    {purity === 916 ? '22K ' : purity === 875 ? '21K' : purity === 750 ? '18k' : purity}  
+                    {purity === 916 ? '22K ' : purity === 875 ? '21K' : purity === 750 ? '18k' : purity}
                   </TableCell>
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2.5vw",
+                      fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
                       fontWeight: "600",
                       textAlign: "center",
                       padding: "8px",
@@ -239,7 +242,7 @@ const CommodityTable = ({ commodities }) => {
                   <TableCell
                     sx={{
                       color: "white",
-                      fontSize: "2.5vw",
+                      fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
                       fontWeight: "600",
                       textAlign: "center",
                       padding: "0px 8px",
@@ -248,7 +251,7 @@ const CommodityTable = ({ commodities }) => {
                     {formatValue(sellPrice, weight)}
                   </TableCell>
                 </TableRow>
-                <Box height={15}></Box>
+                <Box height={{ xs: "1vw", sm: "1.5vw", md: "1.3vw" }}></Box>
               </React.Fragment>
             );
           })}

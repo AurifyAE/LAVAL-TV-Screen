@@ -48,12 +48,12 @@ const SpotRate = () => {
           className="flex flex-row items-center justify-center"
           sx={{
             backgroundColor: "#2C2B2A",
-            width: "200px",
+            width: { xs: "120px", sm: "150px", md: "250px" },
           }}
         >
           <Typography
             sx={{
-              fontSize: metal === 'gold' ? "2.5vw" : "2vw",
+              fontSize: { xs: metal === 'gold' ? "4vw" : "3.8vw", sm: metal === 'gold' ? "3.5vw" : "2.8vw", md: metal === 'gold' ? "2.5vw" : "2vw" },
               fontWeight: "600",
               color: "white",
               textTransform: "uppercase",
@@ -64,7 +64,7 @@ const SpotRate = () => {
           <Typography
             sx={{
               marginTop: "10px",
-              fontSize: metal === 'gold' ? "1.8vw" : "1.5vw",
+              fontSize: { xs: metal === 'gold' ? "3.5vw" : "3vw", sm: metal === 'gold' ? "2.5vw" : "2vw", md: metal === 'gold' ? "1.8vw" : "1.5vw" },
               color: "white",
               fontWeight: "600",
             }}
@@ -77,7 +77,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.5vw",
+                  fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -89,15 +89,15 @@ const SpotRate = () => {
                 sx={{
                   marginLeft: "0.3vw",
                   backgroundColor: "#A18038",
-                  width: "26px",
-                  height: "26px",
+                  width: { xs: "20px", sm: "23px", md: "26px" },
+                  height: { xs: "20px", sm: "23px", md: "26px" },
                   borderRadius: "50%",
-                  fontSize: "1.1vw",
+                  fontSize: { xs: "4vw", sm: "2.8vw", md: "1.1vw" },
                   fontWeight: "600",
                   color: "white",
                 }}
               >
-                <i className="fa-solid fa-dollar-sign"></i>
+                $
               </Box>
             </Box>
             <Typography
@@ -106,14 +106,15 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2.5vw",
+                fontSize: { xs: "5vw", sm: "3.5vw", md: "2.5vw" },
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
                 borderRadius: "5px",
                 color: getColor(data.bidChanged),
                 backgroundColor: getBackgroundColor(data.bidChanged),
-                width: "12vw",
+                width: { xs: "22vw", sm: "18vw", md: "12vw" },
+                marginBottom: { xs: "1vw", sm: "1.5vw", md: "0.5vw" },
               }}
             >
               {data.bid}
@@ -125,13 +126,13 @@ const SpotRate = () => {
                 justifyContent: "center",
                 backgroundColor: "#3b3b3b",
                 borderRadius: "3px",
-                width: "12vw",
+                width: { xs: "22vw", sm: "18vw", md: "12vw" },
               }}
             >
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: "1.5vw",
+                  fontSize: { xs: "2.5vw", sm: "2vw", md: "1.5vw" },
                   color: "white",
                   fontWeight: "bold",
                   marginLeft: "0.5vw",
@@ -146,7 +147,7 @@ const SpotRate = () => {
             <Box className="flex flex-row items-center justify-center">
               <Typography
                 sx={{
-                  fontSize: "1.5vw",
+                  fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
                   color: "white",
                   fontWeight: "500",
                 }}
@@ -158,15 +159,15 @@ const SpotRate = () => {
                 sx={{
                   marginLeft: "0.3vw",
                   backgroundColor: "#A18038",
-                  width: "26px",
-                  height: "26px",
+                  width: { xs: "20px", sm: "23px", md: "26px" },
+                  height: { xs: "20px", sm: "23px", md: "26px" },
                   borderRadius: "50%",
-                  fontSize: "1.1vw",
+                  fontSize: { xs: "4vw", sm: "2.8vw", md: "1.1vw" },
                   fontWeight: "600",
                   color: "white",
                 }}
               >
-                <i className="fa-solid fa-dollar-sign"></i>
+                $
               </Box>
             </Box>
             <Typography
@@ -175,14 +176,15 @@ const SpotRate = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "2.5vw",
+                fontSize: { xs: "5vw", sm: "3.5vw", md: "2.5vw" },
                 fontWeight: "bold",
                 margin: "0.2vw 0",
                 padding: "0.4vw 0",
                 borderRadius: "5px",
                 color: getColor(data.bidChanged),
                 backgroundColor: getBackgroundColor(data.bidChanged),
-                width: "12vw",
+                width: { xs: "22vw", sm: "18vw", md: "12vw" },
+                marginBottom: { xs: "1vw", sm: "1.5vw", md: "0.5vw" },
               }}
             >
               {data.ask}
@@ -194,13 +196,13 @@ const SpotRate = () => {
                 justifyContent: "center",
                 backgroundColor: "#3b3b3b",
                 borderRadius: "3px",
-                width: "12vw",
+                width: { xs: "22vw", sm: "18vw", md: "12vw" },
               }}
             >
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: "1.5vw",
+                  fontSize: { xs: "2.5vw", sm: "2vw", md: "1.5vw" },
                   color: "white",
                   fontWeight: "bold",
                   marginLeft: "0.5vw",
@@ -222,7 +224,7 @@ const SpotRate = () => {
         maxWidth: "100%",
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "1vw" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "3vw", sm: "2vw", md: "1vw" } }}>
         {renderSpotSection("gold", goldData)}
         {renderSpotSection("silver", silverData)}
       </Box>

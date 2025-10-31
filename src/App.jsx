@@ -4,46 +4,52 @@ import { SpotRateProvider } from "./context/SpotRateContext";
 import "./App.css";
 import TvScreen from "./pages/tvscreenView";
 import ErrorPage from "./components/ErrorPage";
+import MobileView from "./pages/MobileView";
 
 function App() {
-  const [isTvScreen, setIsTvScreen] = useState(window.innerWidth >= 100);
+  const [isTvScreen, setIsTvScreen] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    // Listen to resize changes
-    const handleResize = () => {
-      setIsTvScreen(window.innerWidth >= 100);
-      scaleApp(); // Recalculate scale when screen changes
-    };
+    const app = document.getElementById("tv-app-container");
 
-    // Scaling function
     const scaleApp = () => {
-      const app = document.getElementById("tv-app-container");
       if (!app) return;
 
-      // Your base design dimensions (1080p layout)
       const baseWidth = 1920;
       const baseHeight = 1080;
 
-      // Calculate scale based on window size
-      const scaleX = window.innerWidth / baseWidth;
-      const scaleY = window.innerHeight / baseHeight;
-      const scale = Math.min(scaleX, scaleY);
+      // Only apply scaling for larger screens (TVs or PCs)
+      if (window.innerWidth >= 1024) {
+        const scaleX = window.innerWidth / baseWidth;
+        const scaleY = window.innerHeight / baseHeight;
+        const scale = Math.min(scaleX, scaleY);
 
-      // Apply scale transform
-      app.style.transform = `scale(${scale})`;
-      app.style.transformOrigin = "top left";
+        app.style.transform = `scale(${scale})`;
+        app.style.transformOrigin = "top left";
 
-      // Optional: keep centered
-      const offsetX = (window.innerWidth - baseWidth * scale) / 2;
-      const offsetY = (window.innerHeight - baseHeight * scale) / 2;
-      app.style.position = "absolute";
-      app.style.left = `${offsetX}px`;
-      app.style.top = `${offsetY}px`;
+        const offsetX = (window.innerWidth - baseWidth * scale) / 2;
+        const offsetY = (window.innerHeight - baseHeight * scale) / 2;
+
+        app.style.position = "absolute";
+        app.style.left = `${offsetX}px`;
+        app.style.top = `${offsetY}px`;
+      } else {
+        // On mobile, reset scaling and allow responsive layout
+        app.style.transform = "none";
+        app.style.position = "relative";
+        app.style.left = "0";
+        app.style.top = "0";
+        app.style.width = "100%";
+        app.style.height = "auto";
+      }
     };
 
-    // Initialize once
-    scaleApp();
+    const handleResize = () => {
+      setIsTvScreen(window.innerWidth >= 1024);
+      scaleApp();
+    };
 
+    scaleApp();
     window.addEventListener("resize", handleResize);
     window.addEventListener("load", scaleApp);
 
@@ -63,7 +69,7 @@ function App() {
           overflow: "hidden",
         }}
       >
-        {!isTvScreen ? <ErrorPage /> : <TvScreen />}
+        {isTvScreen ? <TvScreen /> : <MobileView />}
       </div>
     </SpotRateProvider>
   );

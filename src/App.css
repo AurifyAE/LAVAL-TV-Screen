@@ -8,6 +8,13 @@ body {
   padding: 0px 20px;
 }
 
+/* Mobile devices (small screens) */
+@media (max-width: 600px) {
+  body {
+    padding: 0px 5px;
+  }
+}
+
 @font-face {
   font-family: "Digital-7";
   src: url("./assets/fonts/digital-7.ttf") format("truetype");

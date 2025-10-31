@@ -10,8 +10,8 @@ const NewsTicker = ({ newsItems }) => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        height: "50px",
-        marginTop: "25px",
+        height: { xs: "28px", sm: "35px", md: "50px" },
+        marginTop: { xs: "10px", sm: "15px", md: "25px" },
         borderRadius: "10px",
       }}
     >
@@ -20,21 +20,21 @@ const NewsTicker = ({ newsItems }) => {
         sx={{
           backgroundColor: "#A18038",
           color: "white",
-          width: "200px",
+          width: { xs: "100px", sm: "150px", md: "200px" },
           height: "100%",
           borderTopLeftRadius: "8px",
           borderBottomLeftRadius: "8px",
         }}
       >
-        <Typography sx={{ fontSize: "1.6vw", fontWeight: "bold", padding: '0px' }}>
+        <Typography sx={{ fontSize: { xs: "3.2vw", sm: "2.4vw", md: "1.6vw" }, fontWeight: "bold", padding: '0px' }}>
           LAVAL
         </Typography>
         <Typography
           sx={{
-            fontSize: "1.2vw",
+            fontSize: { xs: "2.4vw", sm: "1.8vw", md: "1.2vw" },
             fontWeight: "bold",
             padding: "0px",
-            marginTop: "-10px",
+            marginTop: { xs: "-5px", sm: "-5px", md: "-10px" },
           }}
         >
           Latest News
@@ -50,7 +50,7 @@ const NewsTicker = ({ newsItems }) => {
           backgroundColor: "#2C2B2A",
           borderTopRightRadius: "8px",
           borderBottomRightRadius: "8px",
-          height: "50px",
+          height: { xs: "28px", sm: "35px", md: "50px" },
         }}
       >
         <Box
@@ -59,7 +59,7 @@ const NewsTicker = ({ newsItems }) => {
             display: "inline-block",
             animation: "scroll 60s linear infinite",
             color: "black",
-            fontSize: "2.5vw",
+            fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
             textAlign: "center",
           }}
         >
@@ -71,7 +71,7 @@ const NewsTicker = ({ newsItems }) => {
                 marginRight: "4vw",
                 display: "inline-block",
                 color: "white",
-                fontSize: "2.5vw",
+                fontSize: { xs: "4.5vw", sm: "3.5vw", md: "2.5vw" },
               }}
             >
               {item.description}
