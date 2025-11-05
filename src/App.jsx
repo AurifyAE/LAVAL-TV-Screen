@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { useConnectionState } from "use-connection-state";
 import { SpotRateProvider } from "./context/SpotRateContext";
 import "./App.css";
 import TvScreen from "./pages/tvscreenView";
-import ErrorPage from "./components/ErrorPage";
 import MobileView from "./pages/MobileView";
 
 function App() {
@@ -15,32 +13,37 @@ function App() {
     const scaleApp = () => {
       if (!app) return;
 
-      const baseWidth = 1920;
-      const baseHeight = 1080;
+      // Measure actual content height (we’ll use full width)
+      const contentHeight = app.scrollHeight;
+      const viewportHeight = window.innerHeight;
 
-      // Only apply scaling for larger screens (TVs or PCs)
       if (window.innerWidth >= 1024) {
-        const scaleX = window.innerWidth / baseWidth;
-        const scaleY = window.innerHeight / baseHeight;
-        const scale = Math.min(scaleX, scaleY);
+        // Calculate only vertical scale factor
+        const scaleY = viewportHeight / contentHeight;
 
-        app.style.transform = `scale(${scale})`;
-        app.style.transformOrigin = "top left";
+        // Apply vertical scale only
+        app.style.transform = `scaleY(${scaleY})`;
+        app.style.transformOrigin = "top center";
 
-        const offsetX = (window.innerWidth - baseWidth * scale) / 2;
-        const offsetY = (window.innerHeight - baseHeight * scale) / 2;
-
+        // Fill full width
+        app.style.width = "100vw";
         app.style.position = "absolute";
-        app.style.left = `${offsetX}px`;
-        app.style.top = `${offsetY}px`;
+        app.style.left = "0";
+        app.style.top = "0";
+        app.style.right = "0";
+        app.style.margin = "0 auto";
+
+        // Prevent scrollbars or extra space
+        document.body.style.overflow = "hidden";
       } else {
-        // On mobile, reset scaling and allow responsive layout
+        // Reset for mobile / tablet
         app.style.transform = "none";
         app.style.position = "relative";
         app.style.left = "0";
         app.style.top = "0";
         app.style.width = "100%";
         app.style.height = "auto";
+        document.body.style.overflow = "auto";
       }
     };
 
@@ -49,6 +52,7 @@ function App() {
       scaleApp();
     };
 
+    // Run on mount + resize
     scaleApp();
     window.addEventListener("resize", handleResize);
     window.addEventListener("load", scaleApp);
@@ -64,8 +68,8 @@ function App() {
       <div
         id="tv-app-container"
         style={{
-          width: "1920px",
-          height: "1080px",
+          width: "100vw",
+          minHeight: "fit-content",
           overflow: "hidden",
         }}
       >

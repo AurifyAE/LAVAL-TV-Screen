@@ -154,26 +154,30 @@ function TvScreen() {
     const day = date.toLocaleDateString("en-GB", { weekday: "long" });
     const dayOfMonth = date.toLocaleDateString("en-GB", { day: "2-digit" });
 
-    // Safe month handling
+    // Manual month fallback — works everywhere
+    const monthNames = [
+      "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+      "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+    ];
+
     let month;
     try {
-      month = date.toLocaleDateString("en-GB", { month: "long" });
+      const monthName = date.toLocaleDateString("en-GB", { month: "long" });
+      // Some browsers may return numeric value or empty string — validate
+      if (isNaN(monthName) && monthName.length > 0) {
+        month = monthName.toUpperCase();
+      } else {
+        month = monthNames[date.getMonth()];
+      }
     } catch {
-      // Fallback for browsers that don't support month name formatting
-      const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-      ];
       month = monthNames[date.getMonth()];
     }
-
-    // Capitalize month safely
-    month = month ? month.toUpperCase() : "";
 
     const year = date.getFullYear().toString();
 
     return { day, date: dayOfMonth, month, year };
   };
+
 
 
   const getFormattedTimeWithoutSeconds = (date) => {
